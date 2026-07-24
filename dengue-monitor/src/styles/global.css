@@ -1,0 +1,113 @@
+/* RESET BÁSICO */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+  color: #0f2a44;
+}
+
+/* CONTAINER CENTRAL */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* HEADER */
+header {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+nav a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: #0f2a44;
+  font-size: 14px;
+}
+
+/* BOTÕES */
+.btn-primary {
+  background-color: #1b7f5a;
+  color: white;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-secondary {
+  background-color: #e5e5e5;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* HOME */
+.home {
+  padding: 90px 0 60px;
+  text-align: center;
+}
+
+.home h1 {
+  font-size: 38px;
+  max-width: 860px;
+  margin: 0 auto 20px;
+}
+
+.home p {
+  max-width: 720px;
+  margin: 0 auto 36px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #4a5d73;
+}
+
+/* BOTÕES HOME */
+.home .buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 60px;
+}
+
+/* CARDS */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 280px;
+  padding: 28px 22px;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.card h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #5c6f84;
+}
