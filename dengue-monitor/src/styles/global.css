@@ -111,3 +111,28 @@ nav a {
   font-size: 14px;
   color: #5c6f84;
 }
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  color: #0F2A44;
+}
+
+.menu-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.btn-login {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #f1f1f1;
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #0F2A44;
+  font-size: 14px;
+}
