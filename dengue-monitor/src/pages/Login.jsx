@@ -4,71 +4,80 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function Login() {
-
   const navigate = useNavigate();
 
+  // Controla se está mostrando Login ou Cadastro
   const [cadastro, setCadastro] = useState(false);
 
-  // LOGIN
+  // Dados do Login
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
-  // CADASTRO
+  // Dados do Cadastro
   const [nome, setNome] = useState("");
   const [emailCadastro, setEmailCadastro] = useState("");
   const [senhaCadastro, setSenhaCadastro] = useState("");
   const [confirmarSenha, setConfirmarSenha] = useState("");
 
   // ============================
-  // LOGIN
+  // FUNÇÃO DE LOGIN
   // ============================
 
   async function fazerLogin() {
-
     try {
-
       const resposta = await axios.post(
         "http://localhost:3001/login",
         {
-          email,
-          senha
+          email: email,
+          senha: senha
         }
       );
 
-      alert(resposta.data.mensagem);
+      // Guarda os dados do usuário no navegador
+      localStorage.setItem(
+        "usuario",
+        JSON.stringify(resposta.data.usuario)
+      );
 
-      console.log(resposta.data.usuario);
+      alert(
+        "Bem-vindo, " + resposta.data.usuario.nome + "!"
+      );
 
+      // Vai para o Dashboard
       navigate("/dashboard");
 
     } catch (erro) {
+      console.error(erro);
 
       alert(
         erro.response?.data?.mensagem ||
         "Erro ao realizar login."
       );
-
     }
-
   }
 
   // ============================
-  // CADASTRO
+  // FUNÇÃO DE CADASTRO
   // ============================
 
   async function cadastrarUsuario() {
-
+    // Verifica se as senhas são iguais
     if (senhaCadastro !== confirmarSenha) {
       alert("As senhas não coincidem.");
       return;
     }
 
-    try {
+    // Verifica campos vazios
+    if (!nome || !emailCadastro || !senhaCadastro) {
+      alert("Preencha todos os campos.");
+      return;
+    }
 
+    try {
       const resposta = await axios.post(
         "http://localhost:3001/cadastro",
         {
-          nome,
+          nome: nome,
           email: emailCadastro,
           senha: senhaCadastro
         }
@@ -76,34 +85,37 @@ function Login() {
 
       alert(resposta.data.mensagem);
 
+      // Volta para a tela de login
       setCadastro(false);
 
+      // Limpa os campos
       setNome("");
       setEmailCadastro("");
       setSenhaCadastro("");
       setConfirmarSenha("");
 
     } catch (erro) {
+      console.error(erro);
 
       alert(
         erro.response?.data?.mensagem ||
         "Erro ao cadastrar usuário."
       );
-
     }
-
   }
 
   return (
-
     <div className="login-container">
 
       <div className="login-box">
 
         {!cadastro ? (
 
-          <>
+          // =================================
+          // TELA DE LOGIN
+          // =================================
 
+          <>
             <h2>Entrar</h2>
 
             <input
@@ -125,7 +137,6 @@ function Login() {
             </button>
 
             <p className="cadastro-link">
-
               Não possui conta?{" "}
 
               <span
@@ -138,15 +149,16 @@ function Login() {
               >
                 Cadastrar usuário
               </span>
-
             </p>
-
           </>
 
         ) : (
 
-          <>
+          // =================================
+          // TELA DE CADASTRO
+          // =================================
 
+          <>
             <h2>Cadastrar usuário</h2>
 
             <input
@@ -160,21 +172,27 @@ function Login() {
               type="email"
               placeholder="E-mail"
               value={emailCadastro}
-              onChange={(e) => setEmailCadastro(e.target.value)}
+              onChange={(e) =>
+                setEmailCadastro(e.target.value)
+              }
             />
 
             <input
               type="password"
               placeholder="Senha"
               value={senhaCadastro}
-              onChange={(e) => setSenhaCadastro(e.target.value)}
+              onChange={(e) =>
+                setSenhaCadastro(e.target.value)
+              }
             />
 
             <input
               type="password"
               placeholder="Confirmar senha"
               value={confirmarSenha}
-              onChange={(e) => setConfirmarSenha(e.target.value)}
+              onChange={(e) =>
+                setConfirmarSenha(e.target.value)
+              }
             />
 
             <button onClick={cadastrarUsuario}>
@@ -182,7 +200,6 @@ function Login() {
             </button>
 
             <p className="cadastro-link">
-
               Já possui conta?{" "}
 
               <span
@@ -195,9 +212,7 @@ function Login() {
               >
                 Voltar para login
               </span>
-
             </p>
-
           </>
 
         )}
@@ -205,9 +220,7 @@ function Login() {
       </div>
 
     </div>
-
   );
-
 }
 
 export default Login;
