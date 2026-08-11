@@ -1,149 +1,67 @@
-import { Link, useNavigate } from "react-router-dom";
-import { Activity, Sun, User, LogOut } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Activity, Sun, Moon, User } from "lucide-react";
+import { useState, useEffect } from "react";
 
 function Header() {
 
-  const navigate = useNavigate();
+  const [modoNoturno, setModoNoturno] = useState(() => {
+    return localStorage.getItem("modoNoturno") === "true";
+  });
 
-  // Verifica se existe usuário logado
-  const usuarioSalvo = localStorage.getItem("usuario");
+  useEffect(() => {
+    if (modoNoturno) {
+      document.body.classList.add("modo-noturno");
+    } else {
+      document.body.classList.remove("modo-noturno");
+    }
 
-  const usuario = usuarioSalvo
-    ? JSON.parse(usuarioSalvo)
-    : null;
+    localStorage.setItem("modoNoturno", modoNoturno);
+  }, [modoNoturno]);
 
-
-  // Função para sair
-  function sair() {
-
-    // Remove o usuário do navegador
-    localStorage.removeItem("usuario");
-
-    // Volta para a página inicial
-    navigate("/");
-
-    // Atualiza a página para atualizar o menu
-    window.location.reload();
+  function alternarTema() {
+    setModoNoturno(!modoNoturno);
   }
-
 
   return (
     <header>
-
       <div className="container">
 
-        
-        {/* LOGO */}
-        
-
         <div className="logo">
-
-          <Activity
-            size={30}
-            color="#1b7f5a"
-          />
-
-          <span>
-            DengueMonitor
-          </span>
-
+          <Activity size={30} color="#1b7f5a" />
+          <span>DengueMonitor</span>
         </div>
 
-
-        
-        {/* MENU */}
-       
-
         <nav>
-
-          <Link to="/">
-            Início
-          </Link>
-
-          <Link to="/dashboard">
-            Dashboard
-          </Link>
-
-          <Link to="/mapas">
-            Mapas
-          </Link>
-
-          <Link to="/dados">
-            Dados
-          </Link>
-
-          <Link to="/sobre">
-            Sobre
-          </Link>
-
+          <Link to="/">Início</Link>
+          <Link to="/dashboard">Dashboard</Link>
+          <Link to="/mapas">Mapas</Link>
+          <Link to="/dados">Dados</Link>
+          <Link to="/sobre">Sobre</Link>
         </nav>
-
-
-        
-        {/* LADO DIREITO */}
-        
 
         <div className="menu-right">
 
-          <Sun size={18} />
+          {/* BOTÃO DE TEMA */}
+          <button
+            className="botao-tema"
+            onClick={alternarTema}
+            title={modoNoturno ? "Modo claro" : "Modo noturno"}
+          >
+            {modoNoturno ? (
+              <Moon size={20} />
+            ) : (
+              <Sun size={20} />
+            )}
+          </button>
 
-
-         
-          {/* USUÁRIO NÃO LOGADO */}
-          
-
-          {!usuario && (
-
-            <Link
-              className="btn-login"
-              to="/login"
-            >
-
-              <User size={16} />
-
-              Entrar
-
-            </Link>
-
-          )}
-
-
-         
-          {/* USUÁRIO LOGADO */}
-          
-
-          {usuario && (
-
-            <>
-
-              <span className="usuario-nome">
-
-                <User size={16} />
-
-                {usuario.nome}
-
-              </span>
-
-
-              <button
-                className="btn-logout"
-                onClick={sair}
-              >
-
-                <LogOut size={16} />
-
-                Sair
-
-              </button>
-
-            </>
-
-          )}
+          <Link className="btn-login" to="/login">
+            <User size={16} />
+            Entrar
+          </Link>
 
         </div>
 
       </div>
-
     </header>
   );
 }

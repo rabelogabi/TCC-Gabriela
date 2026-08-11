@@ -1,0 +1,359 @@
+.sobre {
+  width: 100%;
+  min-height: 100vh;
+  background: #ffffff;
+  color: #092d4d;
+  padding-bottom: 40px;
+}
+
+
+.sobre-intro {
+  text-align: center;
+  padding: 30px 20px 22px;
+}
+
+.sobre-intro h1 {
+  margin: 0;
+  font-size: 32px;
+  line-height: 1.15;
+  font-weight: 700;
+  color: #092d4d;
+}
+
+.sobre-intro p {
+  max-width: 850px;
+  margin: 10px auto 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #092d4d;
+}
+
+.projeto-card {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto 38px;
+  padding: 20px 22px;
+  background: #eeeeee;
+  border-radius: 15px;
+  box-sizing: border-box;
+}
+
+.projeto-card h2 {
+  margin: 0 0 4px;
+  font-size: 16px;
+  color: #092d4d;
+}
+
+.curso {
+  margin: 0 0 18px;
+  font-size: 12px;
+  color: #092d4d;
+}
+
+.dados-projeto {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 70px;
+  row-gap: 12px;
+}
+
+.dados-projeto strong,
+.objetivo strong {
+  display: block;
+  font-size: 12px;
+  color: #092d4d;
+}
+
+.dados-projeto p {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: #092d4d;
+}
+
+.objetivo {
+  margin-top: 16px;
+}
+
+.objetivo p {
+  margin: 4px 0 0;
+  font-size: 11px;
+  line-height: 1.4;
+  color: #092d4d;
+}
+
+.funcionalidades {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.funcionalidades h2 {
+  text-align: center;
+  margin: 0 0 28px;
+  font-size: 30px;
+  font-weight: 700;
+  color: #092d4d;
+}
+
+.funcionalidades-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.funcionalidade-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  min-height: 105px;
+
+  padding: 15px;
+
+  background: #eeeeee;
+
+  border-radius: 12px;
+
+  box-sizing: border-box;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.funcionalidade-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.funcionalidade-card svg {
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  stroke-width: 2.3;
+}
+
+
+.icone-dados {
+  color: #159570;
+}
+
+
+.icone-mapa {
+  color: #e0b51a;
+}
+
+.icone-estatistica {
+  color: #e8892d;
+}
+
+.icone-clima {
+  color: #20a6a0;
+}
+
+.icone-consulta {
+  color: #3867d6;
+}
+
+.icone-usuarios {
+  color: #8e44ad;
+}
+
+.icone-seguranca {
+  color: #e74c3c;
+}
+
+.icone-tempo {
+  color: #2f80ed;
+}
+
+.funcionalidade-card h3 {
+  margin: 0 0 6px;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  color: #092d4d;
+}
+
+.funcionalidade-card p {
+  margin: 0;
+
+  font-size: 10px;
+
+  line-height: 1.4;
+
+  color: #333333;
+}
+
+.tecnologias {
+  width: 90%;
+  max-width: 1100px;
+
+  margin: 25px auto 30px;
+
+  padding: 20px 22px;
+
+  background: #eeeeee;
+
+  border-radius: 12px;
+
+  box-sizing: border-box;
+}
+
+.tecnologias h2 {
+  margin: 0 0 16px;
+
+  font-size: 16px;
+
+  color: #092d4d;
+}
+
+.tecnologias-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 25px;
+}
+
+.tecnologia {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.tecnologia svg {
+  width: 26px;
+  height: 26px;
+
+  color: #1b7f5a;
+
+  stroke-width: 2.2;
+}
+
+.tecnologia strong {
+  font-size: 11px;
+
+  color: #092d4d;
+}
+
+.tecnologia p {
+  margin: 3px 0 0;
+
+  font-size: 10px;
+
+  color: #333333;
+}
+
+.impacto {
+  width: 90%;
+  max-width: 1100px;
+
+  margin: 0 auto;
+}
+
+.impacto h2 {
+  margin: 0 0 18px;
+
+  font-size: 16px;
+
+  color: #092d4d;
+}
+
+.impacto-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 20px 50px;
+}
+
+.impacto-grid h3 {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  margin: 0 0 6px;
+
+  font-size: 12px;
+
+  color: #1b7f5a;
+}
+
+.impacto-grid h3 svg {
+  color: #1b7f5a;
+}
+
+.impacto-grid p {
+  margin: 0;
+
+  font-size: 10px;
+
+  line-height: 1.4;
+
+  color: #333333;
+}
+
+.sobre-footer {
+  text-align: center;
+
+  margin-top: 40px;
+
+  color: #777777;
+
+  font-size: 9px;
+
+  line-height: 1.4;
+}
+
+.sobre-footer p {
+  margin: 3px 0;
+}
+
+
+
+@media (max-width: 900px) {
+
+  .funcionalidades-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .sobre-intro {
+    padding-top: 20px;
+  }
+
+  .sobre-intro h1 {
+    font-size: 24px;
+  }
+
+  .sobre-intro p {
+    font-size: 12px;
+  }
+
+  .dados-projeto {
+    grid-template-columns: 1fr;
+  }
+
+  .funcionalidades-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tecnologias-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .impacto-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
