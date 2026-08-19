@@ -239,3 +239,148 @@ body.modo-noturno .tecnologia p {
 body.modo-noturno .impacto-grid p {
   color: #cbd5e1;
 }
+/* =========================
+   BOTÃO MODO NOTURNO
+========================= */
+
+.botao-tema {
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 7px;
+
+  color: #092d4d;
+
+  transition: 0.2s;
+}
+
+.botao-tema:hover {
+  transform: rotate(15deg);
+}
+
+
+/* =========================
+   BOTÃO SAIR
+========================= */
+
+.btn-sair {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  border: none;
+  background: transparent;
+
+  color: #092d4d;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  padding: 8px 10px;
+
+  transition: 0.2s;
+}
+
+.btn-sair:hover {
+  color: #d64545;
+}
+
+
+/* =========================
+   MODO NOTURNO
+========================= */
+
+body.modo-noturno {
+  background: #111827;
+  color: #f1f5f9;
+}
+
+
+/* HEADER */
+
+body.modo-noturno header {
+  background: #111827;
+  border-bottom-color: #263244;
+}
+
+body.modo-noturno header a {
+  color: #f1f5f9;
+}
+
+body.modo-noturno .botao-tema {
+  color: #facc15;
+}
+
+body.modo-noturno .btn-sair {
+  color: #f1f5f9;
+}
+
+body.modo-noturno .btn-sair:hover {
+  color: #ff6b6b;
+}
+
+
+/* CONTEÚDO */
+
+body.modo-noturno .sobre,
+body.modo-noturno .dashboard,
+body.modo-noturno main {
+  background: #111827;
+  color: #f1f5f9;
+}
+
+
+/* TÍTULOS */
+
+body.modo-noturno h1,
+body.modo-noturno h2,
+body.modo-noturno h3 {
+  color: #f1f5f9;
+}
+
+
+/* PARÁGRAFOS */
+
+body.modo-noturno p {
+  color: #cbd5e1;
+}
+
+
+/* CARDS */
+
+body.modo-noturno .projeto-card,
+body.modo-noturno .funcionalidade-card,
+body.modo-noturno .tecnologias {
+  background: #1f2937;
+}
+
+
+/* TEXTOS DOS CARDS */
+
+body.modo-noturno .projeto-card strong,
+body.modo-noturno .funcionalidade-card h3,
+body.modo-noturno .tecnologias strong {
+  color: #f1f5f9;
+}
+
+
+/* TEXTOS DAS FUNCIONALIDADES */
+
+body.modo-noturno .funcionalidade-card p,
+body.modo-noturno .tecnologia p {
+  color: #cbd5e1;
+}
+
+
+/* IMPACTO */
+
+body.modo-noturno .impacto-grid p {
+  color: #cbd5e1;
+}

@@ -1,0 +1,671 @@
+/* =====================================================
+   PÁGINA DE MAPAS
+===================================================== */
+
+.mapas-page {
+
+  width: 100%;
+  min-height: 100vh;
+
+  background: #ffffff;
+
+  padding-bottom: 60px;
+
+}
+
+
+.mapas-container {
+
+  width: 92%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+}
+
+
+/* =====================================================
+   CABEÇALHO
+===================================================== */
+
+.mapas-header {
+
+  text-align: center;
+
+  padding: 35px 20px 30px;
+
+}
+
+
+.mapas-header h1 {
+
+  margin: 0;
+
+  color: #092d4d;
+
+  font-size: 32px;
+
+  font-weight: 700;
+
+}
+
+
+.mapas-header p {
+
+  margin: 10px auto 0;
+
+  max-width: 750px;
+
+  color: #5f6b76;
+
+  font-size: 15px;
+
+  line-height: 1.5;
+
+}
+
+
+/* =====================================================
+   MAPAS PÚBLICOS
+===================================================== */
+
+.mapas-publicos {
+
+  width: 100%;
+
+}
+
+
+/* Título */
+
+.mapas-publicos-titulo {
+
+  margin-bottom: 20px;
+
+}
+
+
+.mapas-publicos-titulo h2 {
+
+  margin: 0;
+
+  color: #092d4d;
+
+  font-size: 23px;
+
+}
+
+
+.mapas-publicos-titulo p {
+
+  margin: 7px 0 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+
+}
+
+
+/* =====================================================
+   CARD DO GRÁFICO
+===================================================== */
+
+.grafico-publico {
+
+  background: #ffffff;
+
+  border: 1px solid #e1e6ea;
+
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 4px 14px rgba(0, 0, 0, 0.06);
+
+}
+
+
+/* Cabeçalho */
+
+.grafico-publico-titulo {
+
+  padding: 20px 24px;
+
+  border-bottom: 1px solid #e5e7eb;
+
+}
+
+
+.grafico-publico-titulo h3 {
+
+  margin: 0;
+
+  color: #092d4d;
+
+  font-size: 19px;
+
+}
+
+
+.grafico-publico-titulo p {
+
+  margin: 6px 0 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+
+}
+
+
+/* =====================================================
+   IMAGEM
+===================================================== */
+
+.imagem-grafico {
+
+  width: 100%;
+
+  background: #ffffff;
+
+  padding: 15px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+}
+
+
+.imagem-grafico img {
+
+  display: block;
+
+  width: 100%;
+
+  max-width: 1000px;
+
+  height: auto;
+
+  object-fit: contain;
+
+}
+
+
+/* =====================================================
+   AVISO DE LOGIN
+===================================================== */
+
+.aviso-login-mapas {
+
+  margin-top: 25px;
+
+  padding: 18px 22px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  background: #edf8f2;
+
+  border: 1px solid #ccebdc;
+
+  border-radius: 12px;
+
+}
+
+
+.aviso-login-icone {
+
+  font-size: 25px;
+
+}
+
+
+.aviso-login-mapas strong {
+
+  color: #145c42;
+
+  font-size: 15px;
+
+}
+
+
+.aviso-login-mapas p {
+
+  margin: 5px 0 0;
+
+  color: #39745c;
+
+  font-size: 13px;
+
+  line-height: 1.4;
+
+}
+
+
+/* =====================================================
+   MAPA INTERATIVO / POWER BI
+===================================================== */
+
+.mapa-interativo {
+
+  width: 100%;
+
+  background: #ffffff;
+
+  border: 1px solid #e1e6ea;
+
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 4px 14px rgba(0, 0, 0, 0.06);
+
+}
+
+
+/* =====================================================
+   CABEÇALHO POWER BI
+===================================================== */
+
+.mapa-interativo-header {
+
+  padding: 20px 24px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border-bottom: 1px solid #e5e7eb;
+
+}
+
+
+.mapa-interativo-header h2 {
+
+  margin: 0;
+
+  color: #092d4d;
+
+  font-size: 22px;
+
+}
+
+
+.mapa-interativo-header p {
+
+  margin: 6px 0 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+
+}
+
+
+.mapa-interativo-header strong {
+
+  color: #1b7f5a;
+
+}
+
+
+/* =====================================================
+   STATUS DO USUÁRIO
+===================================================== */
+
+.status-login {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 7px 12px;
+
+  border-radius: 20px;
+
+  background: #edf8f2;
+
+  color: #1b7f5a;
+
+  font-size: 12px;
+
+  white-space: nowrap;
+
+}
+
+
+.status-bolinha {
+
+  width: 8px;
+
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #1b7f5a;
+
+}
+
+
+/* =====================================================
+   POWER BI
+===================================================== */
+
+.powerbi-wrapper {
+
+  width: 100%;
+
+  height: 780px;
+
+  background: #f5f7f9;
+
+  overflow: hidden;
+
+}
+
+
+.powerbi-wrapper iframe {
+
+  width: 100%;
+
+  height: 100%;
+
+  border: none;
+
+  display: block;
+
+}
+
+
+/* =====================================================
+   INFORMAÇÃO POWER BI
+===================================================== */
+
+.powerbi-info {
+
+  padding: 18px 24px;
+
+  background: #f8fafb;
+
+  border-top: 1px solid #e5e7eb;
+
+}
+
+
+.powerbi-info h3 {
+
+  margin: 0 0 5px;
+
+  color: #092d4d;
+
+  font-size: 16px;
+
+}
+
+
+.powerbi-info p {
+
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+}
+
+
+/* =====================================================
+   MODO NOTURNO
+===================================================== */
+
+body.modo-noturno .mapas-page {
+
+  background: #111827;
+
+}
+
+
+body.modo-noturno .mapas-header h1 {
+
+  color: #f1f5f9;
+
+}
+
+
+body.modo-noturno .mapas-header p {
+
+  color: #cbd5e1;
+
+}
+
+
+/* Cards */
+
+body.modo-noturno .grafico-publico,
+body.modo-noturno .mapa-interativo {
+
+  background: #1f2937;
+
+  border-color: #374151;
+
+}
+
+
+/* Cabeçalhos */
+
+body.modo-noturno .mapas-publicos-titulo h2,
+body.modo-noturno .grafico-publico-titulo h3,
+body.modo-noturno .mapa-interativo-header h2 {
+
+  color: #f1f5f9;
+
+}
+
+
+body.modo-noturno .mapas-publicos-titulo p,
+body.modo-noturno .grafico-publico-titulo p,
+body.modo-noturno .mapa-interativo-header p {
+
+  color: #cbd5e1;
+
+}
+
+
+body.modo-noturno .grafico-publico-titulo,
+body.modo-noturno .mapa-interativo-header {
+
+  border-color: #374151;
+
+}
+
+
+/* Imagem */
+
+body.modo-noturno .imagem-grafico {
+
+  background: #ffffff;
+
+}
+
+
+/* Aviso */
+
+body.modo-noturno .aviso-login-mapas {
+
+  background: #172f27;
+
+  border-color: #24523f;
+
+}
+
+
+body.modo-noturno .aviso-login-mapas strong {
+
+  color: #86efac;
+
+}
+
+
+body.modo-noturno .aviso-login-mapas p {
+
+  color: #bbf7d0;
+
+}
+
+
+/* Status */
+
+body.modo-noturno .status-login {
+
+  background: #172f27;
+
+  color: #86efac;
+
+}
+
+
+body.modo-noturno .status-bolinha {
+
+  background: #4ade80;
+
+}
+
+
+/* Power BI */
+
+body.modo-noturno .powerbi-info {
+
+  background: #17202c;
+
+  border-color: #374151;
+
+}
+
+
+body.modo-noturno .powerbi-info h3 {
+
+  color: #f1f5f9;
+
+}
+
+
+body.modo-noturno .powerbi-info p {
+
+  color: #cbd5e1;
+
+}
+
+
+/* =====================================================
+   RESPONSIVIDADE
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .mapas-container {
+
+    width: 95%;
+
+  }
+
+
+  .mapas-header h1 {
+
+    font-size: 28px;
+
+  }
+
+
+  .mapa-interativo-header {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+  }
+
+
+  .powerbi-wrapper {
+
+    height: 650px;
+
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .mapas-header {
+
+    padding: 25px 10px;
+
+  }
+
+
+  .mapas-header h1 {
+
+    font-size: 24px;
+
+  }
+
+
+  .mapas-header p {
+
+    font-size: 13px;
+
+  }
+
+
+  .mapas-publicos-titulo h2 {
+
+    font-size: 20px;
+
+  }
+
+
+  .grafico-publico-titulo {
+
+    padding: 16px;
+
+  }
+
+
+  .imagem-grafico {
+
+    padding: 5px;
+
+  }
+
+
+  .aviso-login-mapas {
+
+    align-items: flex-start;
+
+  }
+
+
+  .powerbi-wrapper {
+
+    height: 600px;
+
+  }
+
+}
