@@ -1,0 +1,936 @@
+.dashboard-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #ffffff;
+  padding-bottom: 60px;
+}
+
+.dashboard-container {
+  width: 92%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+
+/* 
+   CABEÇALHO
+ */
+
+.dashboard-header {
+  text-align: center;
+  padding: 35px 20px 30px;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  color: #092d4d;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+
+/* 
+   RESUMO
+ */
+
+.dashboard-resumo {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+
+/* 
+   CARDS
+ */
+
+.indicadores-dashboard {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 18px;
+}
+
+
+.indicador-dashboard {
+  min-height: 105px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #e1e6ea;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 4px 14px rgba(0, 0, 0, 0.06);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.indicador-dashboard:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+
+/* 
+   ÍCONES DOS CARDS
+ */
+
+.indicador-dashboard-icon {
+  width: 50px;
+  height: 50px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+}
+
+
+.indicador-dashboard-icon.casos {
+  background: #e8f5ef;
+  color: #1b7f5a;
+}
+
+
+.indicador-dashboard-icon.obitos {
+  background: #fceaea;
+  color: #c0392b;
+}
+
+
+.indicador-dashboard-icon.municipios {
+  background: #eaf1f8;
+  color: #2874a6;
+}
+
+
+.indicador-dashboard-icon.incidencia {
+  background: #fff4df;
+  color: #d68910;
+}
+
+
+/* 
+   TEXTOS DOS CARDS
+ */
+
+.indicador-dashboard h3 {
+  margin: 0 0 5px;
+
+  color: #475569;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+
+.indicador-dashboard strong {
+  display: block;
+
+  color: #092d4d;
+
+  font-size: 24px;
+
+  line-height: 1.2;
+}
+
+
+.indicador-dashboard p {
+  margin: 4px 0 0;
+
+  color: #94a3b8;
+
+  font-size: 12px;
+}
+
+
+/* 
+   DASHBOARD PÚBLICO
+ */
+
+.dashboard-publico {
+  width: 100%;
+  margin-top: 30px;
+}
+
+
+/* 
+   INTRODUÇÃO
+ */
+
+.dashboard-publico-intro {
+  width: 100%;
+
+  padding: 20px 24px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  background: #ffffff;
+
+  border: 1px solid #e1e6ea;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 4px 14px rgba(0, 0, 0, 0.06);
+
+  margin-bottom: 20px;
+}
+
+
+.dashboard-publico-icon {
+  width: 50px;
+  height: 50px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #e8f5ef;
+
+  color: #1b7f5a;
+}
+
+
+.dashboard-publico-intro h2 {
+  margin: 0 0 5px;
+
+  color: #092d4d;
+
+  font-size: 21px;
+}
+
+
+.dashboard-publico-intro p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+
+/* 
+   CARROSSEL
+ */
+
+.dashboard-carrossel {
+  width: 100%;
+
+  background: #ffffff;
+
+  border: 1px solid #e1e6ea;
+
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+
+/* 
+   CABEÇALHO DO CARROSSEL
+ */
+
+.dashboard-carrossel-header {
+  min-height: 75px;
+
+  padding: 18px 24px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  border-bottom: 1px solid #e5e7eb;
+}
+
+
+.dashboard-carrossel-header h3 {
+  margin: 0 0 5px;
+
+  color: #092d4d;
+
+  font-size: 19px;
+}
+
+
+.dashboard-carrossel-header p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+
+/* 
+   ÁREA DA IMAGEM
+ */
+
+.dashboard-carrossel-imagem {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 500px;
+
+  padding: 20px 70px;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #ffffff;
+}
+
+
+.dashboard-carrossel-imagem img {
+  display: block;
+
+  width: 100%;
+
+  max-width: 1100px;
+
+  max-height: 550px;
+
+  height: auto;
+
+  object-fit: contain;
+
+  border-radius: 5px;
+}
+
+
+/* 
+   BOTÕES DO CARROSSEL
+ */
+
+.carrossel-botao {
+  position: absolute;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #dbe3e8;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  color: #092d4d;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.10);
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.carrossel-botao:hover {
+  background: #1b7f5a;
+
+  color: #ffffff;
+
+  transform:
+    translateY(-50%) scale(1.05);
+}
+
+
+.carrossel-botao.anterior {
+  left: 18px;
+}
+
+
+.carrossel-botao.proximo {
+  right: 18px;
+}
+
+
+/* 
+   INDICADORES
+ */
+
+.carrossel-indicadores {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 15px 10px 5px;
+}
+
+
+.carrossel-indicadores button {
+  width: 8px;
+  height: 8px;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: #cbd5e1;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.carrossel-indicadores button:hover {
+  background: #1b7f5a;
+}
+
+
+.carrossel-indicadores button.ativo {
+  width: 10px;
+  height: 10px;
+
+  background: #1b7f5a;
+
+  transform: scale(1.1);
+}
+
+
+/* 
+   CONTADOR
+ */
+
+.carrossel-contador {
+  padding: 8px 10px 15px;
+
+  text-align: center;
+
+  color: #94a3b8;
+
+  font-size: 12px;
+}
+
+
+/* 
+   AVISO DE LOGIN
+ */
+
+.dashboard-login-aviso {
+  width: 100%;
+
+  margin-top: 25px;
+
+  padding: 18px 22px;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  background: #edf8f2;
+
+  border: 1px solid #ccebdc;
+
+  border-radius: 12px;
+}
+
+
+.dashboard-login-icone {
+  width: 45px;
+  height: 45px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #d9f1e5;
+
+  color: #1b7f5a;
+}
+
+
+.dashboard-login-aviso strong {
+  color: #145c42;
+
+  font-size: 15px;
+}
+
+
+.dashboard-login-aviso p {
+  margin: 5px 0 0;
+
+  color: #39745c;
+
+  font-size: 13px;
+
+  line-height: 1.4;
+}
+
+
+/* 
+   DASHBOARD LOGADO
+ */
+
+.dashboard-interativo {
+  width: 100%;
+
+  margin-top: 30px;
+
+  background: #ffffff;
+
+  border: 1px solid #e1e6ea;
+
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+
+/* 
+   CABEÇALHO POWER BI
+ */
+
+.dashboard-interativo-header {
+  width: 100%;
+
+  min-height: 78px;
+
+  padding: 20px 24px;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #e5e7eb;
+}
+
+
+.dashboard-interativo-header h2 {
+  margin: 0;
+
+  color: #092d4d;
+
+  font-size: 22px;
+}
+
+
+.dashboard-interativo-header p {
+  margin: 6px 0 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+
+/* 
+   STATUS
+ */
+
+.dashboard-status-login {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 7px 12px;
+
+  border-radius: 20px;
+
+  background: #edf8f2;
+
+  color: #1b7f5a;
+
+  font-size: 12px;
+
+  white-space: nowrap;
+}
+
+
+.dashboard-status-bolinha {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #1b7f5a;
+}
+
+
+/* 
+   POWER BI
+ */
+
+.dashboard-powerbi-wrapper {
+  width: 100%;
+
+  height: 780px;
+
+  background: #f5f7f9;
+
+  overflow: hidden;
+}
+
+
+.dashboard-powerbi-wrapper iframe {
+  width: 100%;
+
+  height: 100%;
+
+  border: none;
+
+  display: block;
+}
+
+
+/* 
+   INFORMAÇÃO POWER BI
+ */
+
+.dashboard-powerbi-info {
+  width: 100%;
+
+  padding: 18px 24px;
+
+  box-sizing: border-box;
+
+  background: #f8fafb;
+
+  border-top: 1px solid #e5e7eb;
+}
+
+
+.dashboard-powerbi-info h3 {
+  margin: 0 0 5px;
+
+  color: #092d4d;
+
+  font-size: 16px;
+}
+
+
+.dashboard-powerbi-info p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+
+/* 
+   MODO NOTURNO
+ */
+
+body.modo-noturno .dashboard-page {
+  background: #111827;
+}
+
+
+body.modo-noturno .dashboard-header h1 {
+  color: #f1f5f9;
+}
+
+
+body.modo-noturno .indicador-dashboard,
+body.modo-noturno .dashboard-publico-intro,
+body.modo-noturno .dashboard-carrossel,
+body.modo-noturno .dashboard-interativo {
+  background: #1f2937;
+
+  border-color: #374151;
+}
+
+
+body.modo-noturno .indicador-dashboard h3,
+body.modo-noturno .dashboard-publico-intro h2,
+body.modo-noturno .dashboard-carrossel-header h3,
+body.modo-noturno .dashboard-interativo-header h2 {
+  color: #f1f5f9;
+}
+
+
+body.modo-noturno .indicador-dashboard strong {
+  color: #f1f5f9;
+}
+
+
+body.modo-noturno .indicador-dashboard p,
+body.modo-noturno .dashboard-publico-intro p,
+body.modo-noturno .dashboard-carrossel-header p,
+body.modo-noturno .dashboard-interativo-header p {
+  color: #cbd5e1;
+}
+
+
+body.modo-noturno .dashboard-interativo-header,
+body.modo-noturno .dashboard-carrossel-header {
+  background: #1f2937;
+
+  border-color: #374151;
+}
+
+
+body.modo-noturno .dashboard-carrossel-imagem {
+  background: #ffffff;
+}
+
+
+body.modo-noturno .dashboard-powerbi-info {
+  background: #17202c;
+
+  border-color: #374151;
+}
+
+
+body.modo-noturno .dashboard-powerbi-info h3 {
+  color: #f1f5f9;
+}
+
+
+body.modo-noturno .dashboard-powerbi-info p {
+  color: #cbd5e1;
+}
+
+
+body.modo-noturno .dashboard-login-aviso {
+  background: #172f27;
+
+  border-color: #24523f;
+}
+
+
+body.modo-noturno .dashboard-login-aviso strong {
+  color: #86efac;
+}
+
+
+body.modo-noturno .dashboard-login-aviso p {
+  color: #bbf7d0;
+}
+
+
+body.modo-noturno .carrossel-botao {
+  background: #1f2937;
+
+  border-color: #475569;
+
+  color: #f1f5f9;
+}
+
+
+/* 
+   RESPONSIVIDADE
+ */
+
+@media (max-width: 1100px) {
+
+  .indicadores-dashboard {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 900px) {
+
+  .dashboard-container {
+    width: 95%;
+  }
+
+
+  .dashboard-header h1 {
+    font-size: 28px;
+  }
+
+
+  .dashboard-interativo-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+
+  .dashboard-powerbi-wrapper {
+    height: 650px;
+  }
+
+
+  .dashboard-carrossel-imagem {
+    min-height: 430px;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .dashboard-header {
+    padding: 25px 10px;
+  }
+
+
+  .dashboard-header h1 {
+    font-size: 24px;
+  }
+
+
+  .indicadores-dashboard {
+    grid-template-columns: 1fr;
+  }
+
+
+  .indicador-dashboard {
+    min-height: 95px;
+  }
+
+
+  .dashboard-interativo-header {
+    padding: 16px;
+  }
+
+
+  .dashboard-interativo-header h2 {
+    font-size: 20px;
+  }
+
+
+  .dashboard-powerbi-wrapper {
+    height: 600px;
+  }
+
+
+  .dashboard-carrossel-imagem {
+    min-height: 350px;
+
+    padding: 15px 55px;
+  }
+
+
+  .dashboard-carrossel-imagem img {
+    max-height: 350px;
+  }
+
+
+  .carrossel-botao {
+    width: 38px;
+    height: 38px;
+  }
+
+
+  .carrossel-botao.anterior {
+    left: 10px;
+  }
+
+
+  .carrossel-botao.proximo {
+    right: 10px;
+  }
+
+
+  .dashboard-login-aviso {
+    align-items: flex-start;
+  }
+
+}
+
+
+@media (max-width: 450px) {
+
+  .dashboard-container {
+    width: 94%;
+  }
+
+
+  .dashboard-powerbi-wrapper {
+    height: 550px;
+  }
+
+
+  .dashboard-carrossel-imagem {
+    min-height: 280px;
+
+    padding: 10px 48px;
+  }
+
+
+  .dashboard-carrossel-imagem img {
+    max-height: 280px;
+  }
+
+}

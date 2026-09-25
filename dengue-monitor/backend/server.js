@@ -11,12 +11,14 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Rota inicial
+
+
 app.get("/", (req, res) => {
   res.send("API do Sistema de Monitoramento da Dengue funcionando!");
 });
 
-// Teste da conexão com o banco
+
+
 app.get("/teste-banco", async (req, res) => {
   try {
     const resultado = await pool.query("SELECT NOW()");
@@ -26,25 +28,53 @@ app.get("/teste-banco", async (req, res) => {
       mensagem: "Conectado ao PostgreSQL!",
       servidor: resultado.rows[0].now,
     });
-
   } catch (erro) {
-    console.error(erro);
+    console.error("Erro ao conectar ao banco:", erro);
 
     res.status(500).json({
       sucesso: false,
-      mensagem: "Erro ao conectar ao banco."
+      mensagem: "Erro ao conectar ao banco.",
     });
   }
 });
 
-// Cadastro de usuário
-app.post("/cadastro", async (req, res) => {
 
+
+app.get("/indicadores", async (req, res) => {
+  try {
+    const resultado = await pool.query(`
+      SELECT
+        COUNT(*) AS casos,
+        COUNT(DISTINCT id_mn_resi) AS municipios,
+        COUNT(*) FILTER (
+          WHERE dt_obito IS NOT NULL
+        ) AS obitos
+      FROM dados_dengue_geo;
+    `);
+
+    const dados = resultado.rows[0];
+
+    res.json({
+      sucesso: true,
+      casos: Number(dados.casos),
+      obitos: Number(dados.obitos),
+      municipios: Number(dados.municipios),
+    });
+  } catch (erro) {
+    console.error("Erro ao buscar indicadores:", erro);
+
+    res.status(500).json({
+      sucesso: false,
+      mensagem: "Erro ao buscar indicadores.",
+    });
+  }
+});
+
+
+app.post("/cadastro", async (req, res) => {
   const { nome, email, senha } = req.body;
 
   try {
-
-    // Verifica se o e-mail já existe
     const usuarioExiste = await pool.query(
       "SELECT * FROM usuarios WHERE email = $1",
       [email]
@@ -52,87 +82,82 @@ app.post("/cadastro", async (req, res) => {
 
     if (usuarioExiste.rows.length > 0) {
       return res.status(400).json({
-        mensagem: "E-mail já cadastrado."
+        mensagem: "E-mail já cadastrado.",
       });
     }
 
-    // Criptografa a senha
     const senhaCriptografada = await bcrypt.hash(senha, 10);
 
-    // Salva o usuário no banco
     await pool.query(
-      `INSERT INTO usuarios (nome, email, senha)
-       VALUES ($1, $2, $3)`,
+      `
+      INSERT INTO usuarios (nome, email, senha)
+      VALUES ($1, $2, $3)
+      `,
       [nome, email, senhaCriptografada]
     );
 
     res.status(201).json({
-      mensagem: "Usuário cadastrado com sucesso!"
+      mensagem: "Usuário cadastrado com sucesso!",
     });
-
   } catch (erro) {
-
-    console.error(erro);
+    console.error("Erro ao cadastrar usuário:", erro);
 
     res.status(500).json({
-      mensagem: "Erro ao cadastrar usuário."
+      mensagem: "Erro ao cadastrar usuário.",
     });
-
   }
-
 });
-// Login
+
+
+
 app.post("/login", async (req, res) => {
+  const { email, senha } = req.body;
 
-    const { email, senha } = req.body;
+  try {
+    const resultado = await pool.query(
+      "SELECT * FROM usuarios WHERE email = $1",
+      [email]
+    );
 
-    try {
-
-        const resultado = await pool.query(
-            "SELECT * FROM usuarios WHERE email = $1",
-            [email]
-        );
-
-        if (resultado.rows.length === 0) {
-            return res.status(401).json({
-                mensagem: "E-mail ou senha inválidos."
-            });
-        }
-
-        const usuario = resultado.rows[0];
-
-        const senhaCorreta = await bcrypt.compare(
-            senha,
-            usuario.senha
-        );
-
-        if (!senhaCorreta) {
-            return res.status(401).json({
-                mensagem: "E-mail ou senha inválidos."
-            });
-        }
-
-        res.status(200).json({
-            mensagem: "Login realizado com sucesso!",
-            usuario: {
-                id: usuario.id,
-                nome: usuario.nome,
-                email: usuario.email,
-                perfil: usuario.perfil
-            }
-        });
-
-    } catch (erro) {
-
-        console.error(erro);
-
-        res.status(500).json({
-            mensagem: "Erro ao realizar login."
-        });
-
+    if (resultado.rows.length === 0) {
+      return res.status(401).json({
+        mensagem: "E-mail ou senha inválidos.",
+      });
     }
 
+    const usuario = resultado.rows[0];
+
+    const senhaCorreta = await bcrypt.compare(
+      senha,
+      usuario.senha
+    );
+
+    if (!senhaCorreta) {
+      return res.status(401).json({
+        mensagem: "E-mail ou senha inválidos.",
+      });
+    }
+
+    res.status(200).json({
+      mensagem: "Login realizado com sucesso!",
+      usuario: {
+        id: usuario.id,
+        nome: usuario.nome,
+        email: usuario.email,
+        perfil: usuario.perfil,
+      },
+    });
+  } catch (erro) {
+    console.error("Erro ao realizar login:", erro);
+
+    res.status(500).json({
+      mensagem: "Erro ao realizar login.",
+    });
+  }
 });
+
+
+
 const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, () => {

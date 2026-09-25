@@ -11,12 +11,15 @@ import Sobre from "./pages/Sobre";
 import Header from "./components/Header";
 
 function App() {
+
   return (
+
     <>
-      {/* Menu único do sistema */}
+
       <Header />
 
       <Routes>
+
         <Route path="/" element={<Home />} />
 
         <Route path="/login" element={<Login />} />
@@ -30,9 +33,13 @@ function App() {
         <Route path="/dados" element={<Dados />} />
 
         <Route path="/sobre" element={<Sobre />} />
+
       </Routes>
+
     </>
+
   );
+
 }
 
 export default App;
